@@ -57,3 +57,18 @@ h2 {
     outline:0;
     border-color: blue;
 }
+
+.form-control input:placeholder-shown{
+    font-family: inherit;
+}
+
+button {
+    padding: 10px;
+    background-color: blue;
+    color:white;
+    font-family: inherit;
+    font-size: 18px;
+    width:100%;
+    border:0;
+    border-radius: 5px;
+}
