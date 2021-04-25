@@ -26,6 +26,12 @@ function showSuccess(input) {
 
 }
 
+//Function to check if the email is valid
+function isValidEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
 // Event Listeners
 // Create event listener for submit button
 form.addEventListener('submit',function(e) {
@@ -44,6 +50,8 @@ form.addEventListener('submit',function(e) {
     // check is email input is empty
     if(email.value==='') {
         showError(email, 'Email is required');
+    } else if (!isValidEmail(email.value)){
+        showError(email,'Email is invalid');
     } else {
         showSuccess(email);
     }
