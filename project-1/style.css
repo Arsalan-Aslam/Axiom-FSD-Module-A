@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: aliceblue;
+    background-color: lightblue;
     font-family: 'Lato', sans-serif;
     display: flex;
     align-items: center;
@@ -56,6 +56,7 @@ h2 {
     width: 100%;
     padding: 10px;
     font-size: 14px;
+    font-family: inherit;
 }
 
 .form-control input:focus {
@@ -63,9 +64,6 @@ h2 {
     border-color: #777;;
 }
 
-.form-control input:placeholder-shown{
-    font-family: inherit;
-}
 
 .form button {
     cursor:pointer;
