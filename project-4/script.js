@@ -13,7 +13,7 @@ const currencyTwo = document.getElementById('currency-two');
 const amountCurrencyTwo = document.getElementById('amount-two');
 const rate = document.getElementById('rate');
 const swap = document.getElementById('swap');
-
+const lastUpdated = document.getElementById('last-updated');
 
 // Fetch exchange rates & update the DOM
 function calculate() {
@@ -25,13 +25,16 @@ function calculate() {
     fetch(`https://v6.exchangerate-api.com/v6/8acf3f578e33647a1a9ee130/pair/${currencyOneCode}/${currencyTwoCode}`)
         .then(res => res.json())
         .then(data => {
-
+            
             // Get the Conversion Rate from Currency 1 to Currency 2
-            const conversionRate = data.conversion_rate;
+            const conversionRate = data.conversion_rate.toFixed(2);
+            const updatedDate = data.time_last_update_utc;
             // Update the DOM to display the conversion rate
             rate.innerText = `1 ${currencyOneCode} = ${conversionRate} ${currencyTwoCode}`;
             // Update the Currency Two Amount
             amountCurrencyTwo.value =   new Intl.NumberFormat('en-US', { style: 'currency', currency: currencyTwoCode }).format((amountCurrencyOne.value * conversionRate).toFixed(2));
+
+            lastUpdated.innerText = updatedDate;
 
         });
 };
