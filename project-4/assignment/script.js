@@ -14,8 +14,10 @@ function calculate() {
         .then(res => res.json())
         .then(data => {
             const conversionRates = data.conversion_rates;
+
+            const keys = Object.keys(conversionRates);
             
-            paste.innerHTML = conversionRates;
+            
         
             });
         };
