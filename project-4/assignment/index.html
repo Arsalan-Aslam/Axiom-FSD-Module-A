@@ -12,6 +12,7 @@
         <h1>Exchange Rates</h1>
         <div class="base-currency">
             <select id="base-currency">
+                <option value=''>Please select a country</option>
                 <option value='AFN'>Afghanistan</option>
                 <option value='ALL'>Albania</option>
                 <option value='DZD'>Algeria</option>
@@ -48,7 +49,7 @@
                 <option value='COP'>Colombia</option>
                 <option value='KMF'>Comoros</option>
                 <option value='CRC'>Costa Rica</option>
-                <option selected value="USD">United States of America</option>
+                <option value="USD">United States of America</option>
                 <option value='HRK'>Croatia</option>
                 <option value='CUC'>Cuba</option>
                 <option value='CUP'>Cuba</option>
@@ -175,14 +176,18 @@
             </select>
             <input type="number" id="base-amount" placeholder="0" value="1">
         </div>
-        <div class="exchange-rates">
-            <table id="rates-table">
-                <th>Currency Code</th>
-                <th>Exchange Rate</th>
-                <tbody id="exchange-rates"></tbody>
+        <div class="exchange-rates" id="exchange-rates">
+            <table>
+                <tr>
+                    <th>Currency Code</th>
+                    <th>Exchange Rate</th>
+                </tr>
+                <tbody id="rates-table">
+                    
+                </tbody>
             </table>
-            <p id="paste"></p>
         </div>
+        <!-- <div id="showData"></div> -->
     </div>
 
     <script src="script.js"></script>
