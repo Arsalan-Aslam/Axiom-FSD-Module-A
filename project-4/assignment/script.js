@@ -23,7 +23,6 @@ function calculate() {
                                 <td>${key}</td>
                                 <td>${rates[key]}</td>
                             </tr>`;
-                console.log(row);
                 table.innerHTML += row;
                 
             });
