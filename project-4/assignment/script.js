@@ -21,7 +21,7 @@ function calculate() {
                 const table = document.getElementById('rates-table');
                 const row = `<tr>
                                 <td>${key}</td>
-                                <td>${rates[key]}</td>
+                                <td>${parseFloat(rates[key])*baseAmount.value}</td>
                             </tr>`;
                 console.log(row);
                 table.innerHTML += row;
