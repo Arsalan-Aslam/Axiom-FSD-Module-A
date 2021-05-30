@@ -43,7 +43,7 @@ h1 {
 
 .exchange-rates table{
     width: 100%;
-    /* text-align: center; */
+    text-align: center;
     border-collapse: collapse;
 }
 
@@ -52,5 +52,9 @@ tr:nth-child(even) {
 }  
 
 th, td {
+    padding: 10px;
+}
+
+td {
     padding: 10px;
 }
