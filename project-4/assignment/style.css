@@ -43,6 +43,14 @@ h1 {
 
 .exchange-rates table{
     width: 100%;
-    border: 1px solid grey;
+    /* text-align: center; */
+    border-collapse: collapse;
+}
 
+tr:nth-child(even) {
+    background-color: white;
+}  
+
+th, td {
+    padding: 10px;
 }

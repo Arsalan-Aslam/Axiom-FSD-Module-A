@@ -29,7 +29,7 @@ function calculate() {
             keys.forEach((key) => {
                                 const row = `<tr>
                                 <td>${key}</td>
-                                <td>${parseFloat(rates[key])*baseAmount.value}</td>
+                                <td>${(parseFloat(rates[key])*baseAmount.value).toFixed(2)}</td>
                             </tr>`;
                 // console.log(row);
                 table.innerHTML += row;
