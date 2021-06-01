@@ -20,11 +20,24 @@ async function getRandomUser() {
 
     // console.log(data);
     
-    // Get user name
+    // Get user data
     const user = data.results[0];
     console.log(user);
 
+    // Create the new user
+    const newUser = {
+        name: `${user.name.title} ${user.name.first} ${user.name.last}`,
+        balance: Math.floor(Math.random()*1000000)
+    }
+    console.log(newUser);
+
+    // Add the new user into the data array
+    addData(newUser);
+
 };
+
+// Function to add user data into user data array
+
 
 getRandomUser();
 // getRandomUser();
