@@ -43,6 +43,52 @@ function addData(newUser) {
     updateDOM();
 }
 
+// Function to double money of all users
+function doubleMoney() {
+    console.log('old user data', data);
+    // Loop through all users in the user data array
+    // For each user return the user data
+    // Overwrite the data array with the new data array created by map
+    data = data.map(user => {
+        return { ...user, balance: user.balance * 2 }
+    });
+
+    console.log('new user data', data);
+
+
+    // Update the DOM using the new user data array
+    updateDOM();
+}
+
+// Function to filter only millionaires
+function filterUsers() {
+    // Filter out all users whose balance is less than a million
+    data = data.filter(user =>user.balance >= 1000000);
+    // Update the DOM with new user data
+    updateDOM();
+}
+
+// Function to sort users by balance
+function sortByBalance(){
+    // sort users by balance using a compare function inside sort
+    data = data.sort((a,b) => b.balance - a.balance)
+    updateDOM();
+}
+
+// Function to sum all users balance into total balance
+function totalBalance() {
+    updateDOM();
+    // Add up all balance from all users
+    // Accumulator starts from 0 and adds the current users balance for each iteration
+    const balance = data.reduce((acc, user) => (acc += user.balance), 0);
+    // Create a div for the balance
+    const balanceElement = document.createElement('div');
+    balanceElement.innerHTML = `<h3> Total Balance: ${formatNumberToDollar(balance)}</h3>`
+    // Append balance in main element
+    main.appendChild(balanceElement);
+    
+}
+
 // Function to format random number as money
 function formatNumberToDollar(number) {
     return number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&, ');
@@ -66,9 +112,25 @@ function updateDOM(userData = data) {
 }
 
 // Event Listeners
-?
+
+// 1. Listen for click on Add User button
+addUserBtn.addEventListener('click', getRandomUser);
+
+// 2. Listen for click on the Double Button 
+doubleBtn.addEventListener('click', doubleMoney);
+
+// 3. Listen for click on filter button
+filterBtn.addEventListener('click',filterUsers);
+
+// 4. Listen for click on sort button
+sortBtn.addEventListener('click', sortByBalance);
+
+// 5. Listen for click on Sum button
+sumBtn.addEventListener('click', totalBalance);
 
 // Create a random user
+getRandomUser();
+getRandomUser();
 getRandomUser();
 getRandomUser();
 getRandomUser();
