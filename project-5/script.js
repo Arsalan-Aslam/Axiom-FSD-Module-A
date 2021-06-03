@@ -43,6 +43,11 @@ function addData(newUser) {
     updateDOM();
 }
 
+// Function to format random number as money
+function formatNumberToDollar(number) {
+    return number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&, ');
+}
+
 // Update the UI with data from the user data array
 function updateDOM(userData = data) {
     // Clear previous UI
@@ -54,11 +59,14 @@ function updateDOM(userData = data) {
         // Apply the user class to the new div
         userDiv.classList.add('user');
         // Add inner HTML to the user div
-        userDiv.innerHTML = `<strong>${user.name}</strong> ${user.balance}`
+        userDiv.innerHTML = `<strong>${user.name}</strong> ${formatNumberToDollar(user.balance)}`
         // Add the new element into the DOM
         main.appendChild(userDiv);
     }); 
 }
+
+// Event Listeners
+?
 
 // Create a random user
 getRandomUser();
