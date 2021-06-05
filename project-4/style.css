@@ -84,3 +84,10 @@ select:focus, input:focus, button:focus {
     outline: 0;
 }
 
+li {
+    padding: 10px;
+}
+
+a {
+    color: black;
+}
