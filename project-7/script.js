@@ -38,6 +38,8 @@ function displayWord() {
         .join('')
     }`
 
+    console.log(word.innerText);
+
 };
 
 // Execute displayWord on page load
