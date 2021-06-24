@@ -97,6 +97,20 @@ function displayMealDetails(meal) {
     
 };
 
+// Function for get random meal from API
+
+function getRandomMeal() {
+    // Fetch random meal from API
+    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+    .then(res => res.json())
+    .then(data => {
+        const meal = data.meals[0];
+        displayMealDetails(meal);
+        // console.log(displayMealDetails);
+    })
+}
+
+
 // Event Listeners
 // 1. Listen for form submit
 submit.addEventListener('submit', searchMeal)
@@ -118,4 +132,7 @@ meals.addEventListener('click', e => {
         // Fetch details of meal
         getMeal(mealId);
     }
-})
+});
+
+// 3. Listen for random meal generate button
+generate.addEventListener('click', getRandomMeal); 
