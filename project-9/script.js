@@ -9,11 +9,12 @@ const amount = document.getElementById('amount');
 
 // Temporary array of transactions - to be replaced with local storage
 const Transactions = [
-    // { id: 1, reason: 'Salary', amount: 5000 },
-    // { id: 2, reason: 'Breakfast', amount: -20 },
-    // { id: 3, reason: 'Lunch', amount: -30 },
-    // { id: 4, reason: 'Dinner', amount: -60 },
+//     { id: 1, reason: 'Salary', amount: 5000 },
+//     { id: 2, reason: 'Breakfast', amount: -20 },
+//     { id: 3, reason: 'Lunch', amount: -30 },
+//     { id: 4, reason: 'Dinner', amount: -60 },
 ];
+
 
 // Get transaction data from storage
 let transactions = Transactions;
@@ -75,9 +76,16 @@ function addTransaction(e) {
             id: createID(),
             reason: reason.value,
             amount: +amount.value
-        }
+        };
+
         // Push the new transaction into the transactions array
         transactions.push(transaction);
+
+        // Saving data to local storage
+        localStorage.setItem('data',JSON.stringify(transactions));
+        
+    
+
         // Display the new transaction in the DOM
         displayTransaction(transaction);
         // Update all balances
