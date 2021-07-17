@@ -37,6 +37,45 @@ function playTrack() {
     audio.play();
 }
 
+// Function to pause the track
+function pauseTrack() {
+    // Remove the second class 'play' from the container
+    container.classList.remove('play');
+    // replace the pause icon with play icon
+    playBtn.innerHTML = '<i class="fas fa-play"></i>'
+    // pause the track using the audio element
+    audio.pause();
+}
+// Function to switch to previous track
+function prevTrack() {
+    // decrement the value of trackIndex by 1 to select the previous track from the trackArray
+    trackIndex--;
+    // Check if selected track index is less than 0
+    if(trackIndex < 0) {
+        // Reassign the trackIndex to last track in the trackArray
+        trackIndex = tracks.length - 1;
+    };
+    // Load the selected track
+    loadTrack(tracks[trackIndex]);
+    // Play the selected track
+    playTrack();
+};
+
+// Function to switch to previous track
+function nextTrack() {
+    // Inrement the value of trackIndex by 1 to select the next track from the trackArray
+    trackIndex++;
+    // Check if selected track index is greater than the index of the last track
+    if(trackIndex > (tracks.length - 1)) {
+        // Reassign the trackIndex to first track in the trackArray
+        trackIndex = 0;
+    };
+    // Load the selected track
+    loadTrack(tracks[trackIndex]);
+    // Play the selected track
+    playTrack();
+};
+
 
 // Event Listeners
 // Listen for click on the play button
@@ -51,4 +90,10 @@ playBtn.addEventListener('click', () => {
         // if the track is not playing, play the track
         playTrack();
     }
-})
+});
+
+// Listen for click on the previous button
+previousBtn.addEventListener('click', prevTrack);
+
+// Listen for click on the next button
+nextBtn.addEventListener('click', nextTrack)
