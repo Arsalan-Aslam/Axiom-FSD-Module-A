@@ -60,7 +60,7 @@ userWord.addEventListener('input', e => {
         incrementScore();
         // Clear the userWord field
         userWord.value = "";
-    }
+    } 
 });
 
 // Run the renderWord function on page load
