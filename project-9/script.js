@@ -84,7 +84,9 @@ function addTransaction(e) {
         // Saving data to local storage
         localStorage.setItem('data',JSON.stringify(transactions));
         
-    
+        const result = JSON.parse(localStorage.getItem('data'));
+        typeof result;
+        console.log(result);
 
         // Display the new transaction in the DOM
         displayTransaction(transaction);
