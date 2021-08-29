@@ -66,6 +66,10 @@ h1 button#clear-cards {
     transform: translateX(50%) rotateY(10deg);
 }
 
+.card.right {
+    transform: translateX(-50%) rotateY(10deg);
+}
+
 .card.active {
     opacity: 1;
     transform: translateX(0%) rotateY(0deg);
@@ -152,6 +156,7 @@ h1 button#clear-cards {
 
 .add-card-container.active {
     opacity: 1;
+    z-index: 0;
 }
 
 .add-card-container h1 {
