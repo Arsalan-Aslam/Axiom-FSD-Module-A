@@ -48,7 +48,7 @@ h1 {
     position: absolute;
     top: 20%;
     left: 50%;
-    transform: translate(-50%,-1000px);
+    transform: translate(-50%, -1000px);
     background-color: #bdc3c7;
     padding: 20px;
     border-radius: 5px;
